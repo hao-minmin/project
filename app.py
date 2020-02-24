@@ -1,7 +1,19 @@
-from flask import Flask
+from flask import Flask,render_template
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/index')
 def index():
-    return "<h1>这是我的项目首页!!!</h1>"
+    name = "Bruce"
+    movies = [
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'},
+        {'title':'杀破狼','year':'2010'}
+    ]
+    return render_template('index.html',name=name,movies=movies)
